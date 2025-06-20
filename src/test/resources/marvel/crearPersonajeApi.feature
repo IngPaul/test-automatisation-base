@@ -9,7 +9,7 @@ Feature: TEST-111 Crear personajes en Marvel API
     * print 'Username:', username
 
   @id:1 @createCharacterCreateCharacterSolicitudExitosaTimestampVar200
-  Scenario: T-API-TEST-111-CA04-Crear personaje exitosamente obligatoriamente 200 - karate
+  Scenario: T-API-TEST-111-CA04-Crear personaje exitosamente obligatoriamente 200
     * print 'Creating value: ' + value
     * def createCharacterRequest =
     """
@@ -32,7 +32,7 @@ Feature: TEST-111 Crear personajes en Marvel API
     * def createdCharacterId = response.id
 
   @id:1 @createCharacterCreateCharacterSolicitudExitosa200
-  Scenario: T-API-TEST-111-CA04-Crear personaje exitosamente depende del estado de la base 200 - karate
+  Scenario: T-API-TEST-111-CA04-Crear personaje exitosamente depende del estado de la base 200
     * print 'Creating timestamp: ' + timestamp
     * def createCharacterRequest =
     """
@@ -56,7 +56,7 @@ Feature: TEST-111 Crear personajes en Marvel API
 
   #Analizar despues
   @id:2 @createCharacterNombreDuplicado400
-  Scenario: T-API-TEST-111-CA05-Crear personaje con nombre duplicado 400 - karate
+  Scenario: T-API-TEST-111-CA05-Crear personaje con nombre duplicado 400
     * def createCharacterRequest =
     """
     {
@@ -73,7 +73,7 @@ Feature: TEST-111 Crear personajes en Marvel API
     And match response.error == 'Character name already exists'
 
   @id:3 @createCharacterCamposRequeridos400
-  Scenario: T-API-TEST-111-CA06-Crear personaje con campos requeridos faltantes 400 - karate
+  Scenario: T-API-TEST-111-CA06-Crear personaje con campos requeridos faltantes 400
     * def createCharacterRequest =
     """
     {
