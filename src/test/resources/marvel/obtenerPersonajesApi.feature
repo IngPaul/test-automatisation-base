@@ -15,8 +15,9 @@ Feature: TEST-111 Obtener personajes de Marvel API
     When method GET
     Then status 200
     And assert response.length > 0
-#TODO enlazar
-  @id:2 @getCharacterById @solicitudExitosa200
+
+
+  @id:2 @getCharacterByIdSolicitudExitosa200
   Scenario: T-API-TEST-111-CA02-Obtener personaje por ID exitosamente 200 - karate
     * call read('crearPersonajeApi.feature@createCharacterCreateCharacterSolicitudExitosaTimestampVar200')
     Given  url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters/' + createdCharacterId
@@ -25,7 +26,7 @@ Feature: TEST-111 Obtener personajes de Marvel API
     And match response == { id: 1, name: 'Iron Man', alterego: 'Tony Stark', description: 'Genius billionaire', powers: ['Armor', 'Flight'] }
 
 
-  @id:3 @getCharacterById @personajeNoEncontrado404
+  @id:3 @getCharacterByIdPersonajeNoEncontrado404
   Scenario: T-API-TEST-111-CA03-Obtener personaje por ID no encontrado 404 - karate
     Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters/999'
     When method GET
