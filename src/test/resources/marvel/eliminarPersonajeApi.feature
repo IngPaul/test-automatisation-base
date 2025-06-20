@@ -9,7 +9,7 @@ Feature: TEST-111 Eliminar personajes de Marvel API
     * print 'Username:', username
 
   @id:1 @deleteCharacterSolicitudRemoveExitosa204
-  Scenario: T-API-TEST-111-CA01-Eliminar personaje exitosamente 204 - karate
+  Scenario: T-API-TEST-111-CA01-Eliminar personaje exitosamente 204
     * call read('crearPersonajeApi.feature@createCharacterCreateCharacterSolicitudExitosaTimestampVar200')
     Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/' + username + '/api/characters/' + createdCharacterId
     When method DELETE
@@ -17,7 +17,7 @@ Feature: TEST-111 Eliminar personajes de Marvel API
 
 
   @id:2 @deleteCharacterPersonajeNoEncontrado404
-  Scenario: T-API-TEST-111-CA10-Eliminar personaje no encontrado 404 - karate
+  Scenario: T-API-TEST-111-CA10-Eliminar personaje no encontrado 404
     Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/' + username + '/api/characters/999'
     When method DELETE
     Then status 404

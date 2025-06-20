@@ -10,7 +10,7 @@ Feature: TEST-111 Obtener personajes de Marvel API
 
 
   @id:1 @getCharactersSolicitudExitosa200
-  Scenario: T-API-TEST-111-CA01-Obtener lista de personajes exitosamente 200 - karate
+  Scenario: T-API-TEST-111-CA01-Obtener lista de personajes exitosamente 200
     Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters'
     When method GET
     Then status 200
@@ -18,7 +18,7 @@ Feature: TEST-111 Obtener personajes de Marvel API
 
 
   @id:2 @getCharacterByIdSolicitudExitosa200
-  Scenario: T-API-TEST-111-CA02-Obtener personaje por ID exitosamente 200 - karate
+  Scenario: T-API-TEST-111-CA02-Obtener personaje por ID exitosamente 200
     * call read('crearPersonajeApi.feature@createCharacterCreateCharacterSolicitudExitosaTimestampVar200')
     Given  url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters/' + createdCharacterId
     When method GET
@@ -27,7 +27,7 @@ Feature: TEST-111 Obtener personajes de Marvel API
 
 
   @id:3 @getCharacterByIdPersonajeNoEncontrado404
-  Scenario: T-API-TEST-111-CA03-Obtener personaje por ID no encontrado 404 - karate
+  Scenario: T-API-TEST-111-CA03-Obtener personaje por ID no encontrado 404
     Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters/999'
     When method GET
     Then status 404

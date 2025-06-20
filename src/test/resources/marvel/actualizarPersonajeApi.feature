@@ -9,7 +9,7 @@ Feature: TEST-111 Actualizar personajes en Marvel API
     * print 'Username:', username
 
   @id:1 @updateCharacterSolicitudExitosa200
-  Scenario: T-API-TEST-111-CA07-Actualizar personaje exitosamente 200 - karate
+  Scenario: T-API-TEST-111-CA07-Actualizar personaje exitosamente 200
     * def updateRequest =
     """
     {
@@ -28,7 +28,7 @@ Feature: TEST-111 Actualizar personajes en Marvel API
     And match response.powers == updateRequest.powers
 
   @id:2 @updateCharacterPersonajeNoEncontrado404
-  Scenario: T-API-TEST-111-CA08-Actualizar personaje no encontrado 404 - karate
+  Scenario: T-API-TEST-111-CA08-Actualizar personaje no encontrado 404
     * def updateRequest =
     """
       {
