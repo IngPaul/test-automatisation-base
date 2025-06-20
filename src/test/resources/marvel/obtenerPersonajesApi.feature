@@ -24,6 +24,11 @@ Feature: TEST-111 Obtener personajes de Marvel API
     When method GET
     Then status 200
 
+  @id:2 @getCharacterByIdSolicitudExitosa200
+  Scenario: T-API-TEST-111-CA02-Obtener personaje por ID exitosamente 200 completa
+    Given  url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/' + username + '/api/characters/1'
+    When method GET
+    Then status 200
 
 
   @id:3 @getCharacterByIdPersonajeNoEncontrado404

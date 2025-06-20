@@ -15,13 +15,13 @@ Feature: TEST-111 Eliminar personajes de Marvel API
     When method DELETE
     Then status 204
 
-  @id:1 @deleteCharacterSolicitudRemoveExitosa204
+  @id:2 @deleteCharacterSolicitudRemoveExitosa204
   Scenario: T-API-TEST-111-CA01-Eliminar personaje exitosamente depende de base 204
     Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/' + username + '/api/characters/1'
     When method DELETE
     Then status 204
 
-  @id:2 @deleteCharacterPersonajeNoEncontrado404
+  @id:3 @deleteCharacterPersonajeNoEncontrado404
   Scenario: T-API-TEST-111-CA10-Eliminar personaje no encontrado 404
     Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/' + username + '/api/characters/999'
     When method DELETE

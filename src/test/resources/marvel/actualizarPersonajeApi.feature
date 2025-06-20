@@ -27,7 +27,7 @@ Feature: TEST-111 Actualizar personajes en Marvel API
     And match response.alterego == updateRequest.alterego
     And match response.powers == updateRequest.powers
 
-  @id:1 @updateCharacterSolicitudExitosaCompleta200
+  @id:2 @updateCharacterSolicitudExitosaCompleta200
   Scenario: T-API-TEST-111-CA07-Actualizar personaje completamente exitoso200
     * call read('crearPersonajeApi.feature@createCharacterCreateCharacterSolicitudExitosaCompleta')
     * def updateRequest =
@@ -47,7 +47,7 @@ Feature: TEST-111 Actualizar personajes en Marvel API
     And match response.alterego == updateRequest.alterego
     And match response.powers == updateRequest.powers
 
-  @id:2 @updateCharacterPersonajeNoEncontrado404
+  @id:3 @updateCharacterPersonajeNoEncontrado404
   Scenario: T-API-TEST-111-CA08-Actualizar personaje no encontrado 404
     * def updateRequest =
     """
