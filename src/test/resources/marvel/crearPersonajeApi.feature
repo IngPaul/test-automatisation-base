@@ -8,7 +8,7 @@ Feature: TEST-111 Crear personajes en Marvel API
     * def username = "paul11111"
     * print 'Username:', username
 
-  @id:1 @createCharacterCreateCharacterSolicitudExitosaTimestampVar200
+  @id:1 @createCharacterCreateCharacterSolicitudExitosaCompleta
   Scenario: T-API-TEST-111-CA04-Crear personaje exitosamente obligatoriamente 200
     * print 'Creating value: ' + value
     * def createCharacterRequest =
