@@ -1,12 +1,12 @@
 @REQ_TEST-111 @HU111 @Agente2
 Feature: TEST-111 Obtener personajes de Marvel API
 
-Background:
-  * def randomNumber = function(){ return java.util.concurrent.ThreadLocalRandom.current().nextInt(0, 100000) + '' }
-  * def value = randomNumber()
-  * print 'Valor aleatorio:', value
-  * def username = "paul11111"
-  * print 'Username:', username
+  Background:
+    * def randomNumber = function(){ return java.util.concurrent.ThreadLocalRandom.current().nextInt(0, 100000) + '' }
+    * def value = randomNumber()
+    * print 'Valor aleatorio:', value
+    * def username = "paul11111"
+    * print 'Username:', username
 
 
   @id:1 @getCharactersSolicitudExitosa200

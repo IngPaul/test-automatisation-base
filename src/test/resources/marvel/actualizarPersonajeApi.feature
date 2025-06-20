@@ -1,12 +1,12 @@
 @REQ_TEST-111 @HU111 @Agente2
 Feature: TEST-111 Actualizar personajes en Marvel API
 
-Background:
-  * def randomNumber = function(){ return java.util.concurrent.ThreadLocalRandom.current().nextInt(0, 100000) + '' }
-  * def value = randomNumber()
-  * print 'Valor aleatorio:', value
-  * def username = "paul11111"
-  * print 'Username:', username
+  Background:
+    * def randomNumber = function(){ return java.util.concurrent.ThreadLocalRandom.current().nextInt(0, 100000) + '' }
+    * def value = randomNumber()
+    * print 'Valor aleatorio:', value
+    * def username = "paul11111"
+    * print 'Username:', username
 
   @id:1 @updateCharacterSolicitudExitosa200
   Scenario: T-API-TEST-111-CA07-Actualizar personaje exitosamente 200 - karate
@@ -27,7 +27,7 @@ Background:
     And match response.alterego == updateRequest.alterego
     And match response.powers == updateRequest.powers
 
-  @id:2 @updateCharacterPpersonajeNoEncontrado404
+  @id:2 @updateCharacterPersonajeNoEncontrado404
   Scenario: T-API-TEST-111-CA08-Actualizar personaje no encontrado 404 - karate
     * def updateRequest =
     """
