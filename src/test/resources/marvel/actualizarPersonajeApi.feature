@@ -2,9 +2,13 @@
 Feature: TEST-111 Actualizar personajes en Marvel API
 
 Background:
-  * def timestamp = function(){ return java.lang.System.currentTimeMillis() + '' }
+  * def randomNumber = function(){ return java.util.concurrent.ThreadLocalRandom.current().nextInt(0, 100000) + '' }
+  * def value = randomNumber()
+  * print 'Valor aleatorio:', value
+  * def username = "paul11111"
+  * print 'Username:', username
 
-  @id:1 @updateCharacter @solicitudExitosa200
+  @id:1 @updateCharacterSolicitudExitosa200
   Scenario: T-API-TEST-111-CA07-Actualizar personaje exitosamente 200 - karate
     * def updateRequest =
     """
@@ -15,7 +19,7 @@ Background:
       "powers": ["Armor", "Flight"]
     }
     """
-    Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/paul/api/characters/1'
+    Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/' + username + '/api/characters/1'
     And request updateRequest
     When method PUT
     Then status 200
@@ -23,7 +27,7 @@ Background:
     And match response.alterego == updateRequest.alterego
     And match response.powers == updateRequest.powers
 
-  @id:2 @updateCharacter @personajeNoEncontrado404
+  @id:2 @updateCharacterPpersonajeNoEncontrado404
   Scenario: T-API-TEST-111-CA08-Actualizar personaje no encontrado 404 - karate
     * def updateRequest =
     """

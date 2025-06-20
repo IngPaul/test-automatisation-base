@@ -2,10 +2,14 @@
 Feature: TEST-111 Obtener personajes de Marvel API
 
 Background:
-  * def timestamp = function(){ return java.lang.System.currentTimeMillis() + '' }
+  * def randomNumber = function(){ return java.util.concurrent.ThreadLocalRandom.current().nextInt(0, 100000) + '' }
+  * def value = randomNumber()
+  * print 'Valor aleatorio:', value
+  * def username = "paul11111"
+  * print 'Username:', username
 
 
-  @id:1 @getCharacters @solicitudExitosa200
+  @id:1 @getCharactersSolicitudExitosa200
   Scenario: T-API-TEST-111-CA01-Obtener lista de personajes exitosamente 200 - karate
     Given url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters'
     When method GET
@@ -14,8 +18,8 @@ Background:
 #TODO enlazar
   @id:2 @getCharacterById @solicitudExitosa200
   Scenario: T-API-TEST-111-CA02-Obtener personaje por ID exitosamente 200 - karate
-    * call read('crearPersonajeApi.feature@createCharacterSolicitudExitosa200')
-    Given  url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters/1'
+    * call read('crearPersonajeApi.feature@createCharacterCreateCharacterSolicitudExitosaTimestampVar200')
+    Given  url 'http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters/' + createdCharacterId
     When method GET
     Then status 200
     And match response == { id: 1, name: 'Iron Man', alterego: 'Tony Stark', description: 'Genius billionaire', powers: ['Armor', 'Flight'] }
